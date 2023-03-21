@@ -1,0 +1,45 @@
+@use 'base/variables' as v;
+
+@mixin phone {
+    @media (min-width: v.$phone) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: v.$laptop) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (min-width: v.$pc) {
+        @content;
+    }
+}
+
+// Otros
+
+@mixin grid($columnas,$espaciado) {
+    display: grid;
+    grid-template-columns: repeat($columnas,1fr);
+    gap: $espaciado;
+}
+
+@mixin resetear-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin sombra {
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+}
